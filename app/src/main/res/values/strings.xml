@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">交友网</string>
+    <string name="topText">＜ 返回</string>
+    <string name="regTitle">注册新用户</string>
+    <string name="tip1">请输入用户名</string>
+    <string name="tip2">请输入密码</string>
+    <string name="tip3">确认密码</string>
+    <string name="codeTip">请输入验证码</string>
+    <string name="sex">性别</string>
+    <string name="sex1">男</string>
+    <string name="sex2">女</string>
+    <string name="regBtn">注册</string>
+    <string name="define">_@ zzp交友</string>
+
+
+    <string name="logTitle">交友网</string>
+    <string name="regHref">注册</string>
+    <string name="forget">忘记密码?</string>
+    <string name="logBtn">登录</string>
+
+    <string name="logoImg">这是logo</string>
+    <string name="pyqImg">这是朋友圈</string>
+    <string name="jsbImg">这是记事本</string>
+    <string name="des">这是图片</string>
+
+
+    <string name="backIndex">＜  返回</string>
+
+    <string name="backPyq">＜  返回</string>
+    <string name="report">发表</string>
+    <string name="moodTitle">说说</string>
+    <string name="youMood">说说你此刻的心情吧...</string>
+    <string name="add">添加地点</string>
+</resources>

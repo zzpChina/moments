@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#FFFFFF"
+    android:layout_height="match_parent"
+    tools:context=".activity.WriteMood">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:id="@+id/back4"
+        android:gravity="center_vertical"
+        android:text="@string/backPyq"
+        android:textSize="20sp"/>
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:text="@string/moodTitle" />
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="30dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:background="#7fdcfa"
+        android:layout_margin="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/report"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/back4"
+        android:id="@+id/line"
+        android:background="#464343" />
+
+    <EditText
+        android:layout_width="370dp"
+        android:layout_height="200dp"
+        android:inputType="text"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/line"
+        android:layout_marginTop="5dp"
+        android:gravity="start"
+        android:autofillHints=""
+        android:id="@+id/moodText"
+        android:scrollbars="vertical"
+        android:background="@drawable/moodtext"
+        android:lineSpacingExtra="10dp"
+        android:maxLength="140"
+        android:hint="@string/youMood" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/xj"
+        android:layout_below="@+id/moodText" />
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/dw"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:id="@+id/gps"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/moodText" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+
+        android:layout_below="@+id/gps"
+        android:gravity="center"
+        android:text="@string/add"
+        />
+</RelativeLayout>

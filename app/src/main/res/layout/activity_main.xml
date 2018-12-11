@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tk"
+    tools:context=".activity.Register">
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="@string/topText"
+        android:gravity="center_vertical"
+        android:id="@+id/back"
+        android:textSize="20sp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@+id/back"
+        android:text="@string/regTitle"
+        android:textColor="#060821"
+        android:id="@+id/logo"
+        android:gravity="center"
+        android:textSize="35sp" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:autofillHints="@string/tip1"
+        android:id="@+id/uname"
+        android:inputType="text"
+        android:layout_below="@+id/logo"
+        android:hint="@string/tip1"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:id="@+id/pwd"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/uname"
+        android:autofillHints="@string/tip2"
+        android:hint="@string/tip2"
+        android:gravity="center" />
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:inputType="textPassword"
+        android:id="@+id/pwdsure"
+        android:autofillHints=""
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/pwd"
+        android:hint="@string/tip3"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/pwdsure"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:text="@string/sex"
+        android:id="@+id/sexlabel"
+        android:textSize="25sp" />
+
+
+    <RadioGroup
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/pwdsure"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/sexlabel"
+        android:layout_toRightOf="@id/sexlabel"
+        android:id="@+id/sex" >
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:textSize="18sp"
+            android:id="@+id/nan"
+            android:text="@string/sex1" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nv"
+            android:textSize="18sp"
+            android:text="@string/sex2" />
+ </RadioGroup>
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/sex"
+            android:background="@null"
+            android:inputType="text"
+            android:autofillHints=""
+            android:hint="@string/codeTip"
+            android:gravity="center"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/code" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/codebg"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:autofillHints=""
+            android:textSize="25dp"
+            android:id="@+id/codespan"
+            android:layout_below="@id/sex"
+            android:layout_toRightOf="@+id/code" />
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_below="@+id/code"
+            android:text="@string/regBtn"
+            android:id="@+id/register"
+            android:background="@drawable/reg"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textSize="15sp"
+            android:layout_alignParentBottom="true"
+            android:text="@string/define" />
+
+</RelativeLayout>
