@@ -18,18 +18,20 @@ import java.net.URL;
 public class PublishHttpThread extends Thread{
     private String uname;
     private String content;
+    private String chourl;
     private boolean isOk;
 
     private PublishHttpThread(){}
-    public PublishHttpThread(String uname,String content) {
+    public PublishHttpThread(String uname,String content,String chourl) {
         this.uname = uname;
         this.content=content;
+        this.chourl=chourl;
     }
 
     @Override
     public void run() {
         try {
-            URL url=new URL(MyProperties.URL +"getMood?uname="+uname+"&content="+content);
+            URL url=new URL(MyProperties.URL +chourl+"?uname="+uname+"&content="+content);
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();

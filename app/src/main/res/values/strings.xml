@@ -31,4 +31,6 @@
     <string name="moodTitle">说说</string>
     <string name="youMood">说说你此刻的心情吧...</string>
     <string name="add">添加地点</string>
+
+    <string name="privateDo">私密发布</string>
 </resources>

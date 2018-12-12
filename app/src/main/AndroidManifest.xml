@@ -8,6 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="交友App"
+        android:largeHeap="true"
         android:roundIcon="@drawable/zzp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">

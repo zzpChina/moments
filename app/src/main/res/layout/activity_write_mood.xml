@@ -71,14 +71,23 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/moodText" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/privateDo"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/moodText"
+        android:layout_marginTop="40dp"
+        android:id="@+id/privatePub" />
+
     <TextView
         android:layout_width="100dp"
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-
         android:layout_below="@+id/gps"
         android:gravity="center"
-        android:text="@string/add"
-        />
+        android:text="@string/add"/>
+
+
 </RelativeLayout>
