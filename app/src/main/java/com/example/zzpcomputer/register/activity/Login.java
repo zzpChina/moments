@@ -49,9 +49,7 @@ public class Login extends AppCompatActivity {
             }
             
         });
-
     }
-
 
     public boolean checkLogin(){
         DBHelper dbHelper=new DBHelper(this,"yue.db",null,1);

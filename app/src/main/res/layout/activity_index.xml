@@ -7,6 +7,13 @@
     android:background="@drawable/tk"
     tools:context=".activity.Index">
 
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="@string/backLogin"
+        android:id="@+id/backlog"
+        android:textSize="20sp" />
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -24,6 +31,11 @@
         android:layout_marginTop="60dp"
         android:id="@+id/pyq"
         android:src="@drawable/pyq" />
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/pyq"
+        />
 
     <ImageView
         android:layout_width="120dp"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zzpcomputer.register.R;
@@ -20,6 +21,11 @@ public class Index extends AppCompatActivity {
             Intent intent4=new Intent(Index.this,Pyq.class);
             intent4.putExtras(bundle);
             startActivity(intent4);
+        });
+        TextView textView=findViewById(R.id.backlog);
+        textView.setOnClickListener(v->{
+            Intent intent=new Intent(Index.this,Login.class);
+            startActivity(intent);
         });
         
     }
