@@ -27,6 +27,7 @@
         android:layout_height="30dp"
         android:gravity="center"
         android:textSize="20sp"
+        android:id="@+id/publishMood"
         android:background="#7fdcfa"
         android:layout_margin="10dp"
         android:layout_alignParentEnd="true"
