@@ -27,6 +27,16 @@ public class Index extends AppCompatActivity {
             Intent intent=new Intent(Index.this,Login.class);
             startActivity(intent);
         });
+
+        ImageView groupImg=findViewById(R.id.ql);
+        groupImg.setOnClickListener(v->{
+            Intent intentLast=getIntent();
+            Bundle bundle=intentLast.getExtras();
+            Intent intent4=new Intent(Index.this,ChooseGroup.class);
+            intent4.putExtras(bundle);
+            startActivity(intent4);
+
+        });
         
     }
 }

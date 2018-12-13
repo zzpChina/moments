@@ -22,7 +22,7 @@
     <string name="pyqImg">这是朋友圈</string>
     <string name="jsbImg">这是记事本</string>
     <string name="des">这是图片</string>
-    <string name="backLogin">退出登录</string>
+    <string name="backLogin">＜ 退出</string>
 
 
     <string name="backIndex">＜  返回</string>
@@ -34,4 +34,9 @@
     <string name="add">添加地点</string>
 
     <string name="privateDo">私密发布</string>
+
+
+    <string name="groupBack">＜  返回</string>
+    <string name="InputGroup">选择群聊</string>
+    <string name="regGroup">加入群聊</string>
 </resources>

@@ -22,7 +22,8 @@
         <activity android:name=".activity.Register" />
         <activity android:name=".activity.Index" />
         <activity android:name=".activity.Pyq" />
-        <activity android:name=".activity.WriteMood"></activity>
+        <activity android:name=".activity.WriteMood" />
+        <activity android:name=".activity.ChooseGroup"></activity>
     </application>
 
 </manifest>

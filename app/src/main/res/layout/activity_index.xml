@@ -34,8 +34,7 @@
     <TextView
         android:layout_width="100dp"
         android:layout_height="40dp"
-        android:layout_below="@+id/pyq"
-        />
+        android:layout_below="@+id/pyq" />
 
     <ImageView
         android:layout_width="120dp"
@@ -43,12 +42,12 @@
         android:layout_below="@+id/logo"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:src="@drawable/jsb"
+        android:src="@drawable/ql"
         android:contentDescription="@string/jsbImg"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:layout_marginTop="60dp"
-        android:id="@+id/jsb" />
+        android:id="@+id/ql" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,8 +88,8 @@
             android:layout_height="65dp"
             android:layout_gravity="center"
             android:contentDescription="@string/des"
-            android:layout_marginStart="13dp"
-            android:layout_marginLeft="13dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
             android:src="@drawable/kf" />
     </LinearLayout>
 

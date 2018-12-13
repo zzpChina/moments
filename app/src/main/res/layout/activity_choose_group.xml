@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tk"
+    tools:context=".activity.ChooseGroup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="370dp"
+        android:orientation="vertical"
+        android:background="@drawable/ql">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/groupBack"
+            android:id="@+id/groupBack"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:textSize="40sp"
+            android:id="@+id/logo3"
+            android:text="@string/InputGroup"
+            android:gravity="center"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:background="#ffff"
+            android:layout_gravity="center"
+            android:id="@+id/groupNum"
+            android:layout_marginTop="20dp" />
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:background="#9befe2"
+            android:id="@+id/regGroup"
+            android:layout_marginTop="20dp"
+            android:text="@string/regGroup" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
