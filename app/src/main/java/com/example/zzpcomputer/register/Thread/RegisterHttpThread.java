@@ -1,5 +1,6 @@
 package com.example.zzpcomputer.register.Thread;
 
+import com.example.zzpcomputer.register.utils.HttpMethod;
 import com.example.zzpcomputer.register.utils.MyProperties;
 
 import java.io.BufferedReader;
@@ -14,6 +15,7 @@ import java.net.URLEncoder;
 /**
  * 注册
  */
+@SuppressWarnings("all")
 public class RegisterHttpThread extends Thread{
     private String uname;
     private String password;
@@ -34,7 +36,7 @@ public class RegisterHttpThread extends Thread{
             //获取连接
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             //设置请求方法
-            httpURLConnection.setRequestMethod("POST");
+            httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.POST));
             String body="uname="+URLEncoder.encode(uname,"utf-8")
                     +"&password="+URLEncoder.encode(password,"utf-8")
                     +"&sex="+URLEncoder.encode(sex,"utf-8");
@@ -47,7 +49,7 @@ public class RegisterHttpThread extends Thread{
                 BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
                 String temp;
                 StringBuffer stringBuffer=new StringBuffer();
-                while((temp=bufferedReader.readLine())!=null){
+                while((temp=bufferedReader.readLine()) != null){
                     stringBuffer.append(temp);
                 }
                 isOk=stringBuffer.toString().equals("yes");
@@ -59,6 +61,10 @@ public class RegisterHttpThread extends Thread{
         }
     }
 
+/**
+ * 返回注册结果
+ * @returnSS
+ */
     public boolean isOk() {
         return isOk;
     }

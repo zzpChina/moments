@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import com.example.zzpcomputer.register.R;
 import com.example.zzpcomputer.register.Thread.PublishHttpThread;
 
-import org.w3c.dom.Text;
 @SuppressWarnings("all")
 public class WriteMood extends AppCompatActivity {
 
@@ -23,6 +21,9 @@ public class WriteMood extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_mood);
         TextView back4=findViewById(R.id.back4);
+/**
+ * 返回朋友圈数据，由于需要再次加载朋友圈内容，所以需要交互数据
+ */
         //返回朋友圈
         back4.setOnClickListener(v->{
             Intent intent=getIntent();
@@ -35,7 +36,9 @@ public class WriteMood extends AppCompatActivity {
         EditText editText=findViewById(R.id.moodText);
         RadioGroup radioGroup=findViewById(R.id.quanxian);
         //输入框不为空则能够发表
-
+/**
+ * 发布朋友圈，需要传输数据
+ */
         button.setOnClickListener(v -> {
             if (!editText.getText().toString().trim().equals("")&&editText.getText().toString()!=null&&(editText.getText().toString().indexOf("--")==-1)) {
                 Intent intent = getIntent();
@@ -48,6 +51,10 @@ public class WriteMood extends AppCompatActivity {
                     }
 
                 }
+
+/**
+ * 设置谁可看我发的动态
+ */
                 String chourl="";
                 if(whocansee.equals("仅自己可见")){
                     chourl="getMood";
@@ -56,7 +63,7 @@ public class WriteMood extends AppCompatActivity {
                 }else if(whocansee.equals("所有人可见")){
                     chourl="getMood3";
                 }
-
+                //开启线程
                 PublishHttpThread publishHttpThread = new PublishHttpThread(bundle.getString("uname"), editText.getText().toString(),chourl);
                 publishHttpThread.start();
                 try {

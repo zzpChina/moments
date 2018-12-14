@@ -3,6 +3,7 @@ package com.example.zzpcomputer.register.model;
 /**
  * 用户类
  */
+@SuppressWarnings("all")
 public class User {
     private String headImg;
     private String uname;

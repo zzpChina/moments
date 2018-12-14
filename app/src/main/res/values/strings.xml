@@ -41,6 +41,6 @@
 
 
     <string name="groupBack">＜  返回</string>
-    <string name="InputGroup">选择群聊</string>
-    <string name="regGroup">加入群聊</string>
+    <string name="InputGroup">选择群组</string>
+    <string name="regGroup">加入群组</string>
 </resources>

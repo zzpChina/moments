@@ -12,7 +12,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
- *
+ *选择朋友圈线程，传送上去
  */
 @SuppressWarnings("all")
 public class ChooseGroupHttpThread extends Thread{

@@ -12,32 +12,30 @@ import android.widget.Toast;
 
 import com.example.zzpcomputer.register.R;
 import com.example.zzpcomputer.register.Thread.RegisterHttpThread;
-import com.example.zzpcomputer.register.model.User;
-import com.example.zzpcomputer.register.utils.DBHelper;
 
 @SuppressWarnings("all")
+/**
+ * 注册页面操作
+ */
 public class Register extends AppCompatActivity {
     //获取名字
     EditText unameView=null;
-
     //密码
     EditText pwdView=null;
-
     //获取性别
     RadioGroup sexs=null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //加载验证码
         createCode();
-
         Button sub=(Button)findViewById(R.id.register);
-        EditText uname=findViewById(R.id.uname);
-        EditText password=findViewById(R.id.pwd);
-        RadioGroup radioGroup=findViewById(R.id.sex);
-
+/**
+ * 点击注册按钮，通过注册HTTP线程返回注册结果
+ */
         sub.setOnClickListener(v->{
+            //如果信息填写完整
            if(checkAll()){
                String sex_reg=null;
                for (int i=0;i< sexs.getChildCount();i++){
@@ -46,23 +44,24 @@ public class Register extends AppCompatActivity {
                        sex_reg=radioButton.getText().toString();
                    }
                }
-               RegisterHttpThread registerHttpThread=new RegisterHttpThread(uname.getText().toString(),password.getText().toString(),sex_reg);
+               //注册线程，传参（uname,password,sex）
+               RegisterHttpThread registerHttpThread=new RegisterHttpThread(unameView.getText().toString(),pwdView.getText().toString(),sex_reg);
                registerHttpThread.start();
                try {
                    registerHttpThread.join();
                } catch (InterruptedException e) {
                    e.printStackTrace();
                }
-               if( registerHttpThread.isOk()){
-                   Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-               }else{
-                   Toast.makeText(this, "注册失败", Toast.LENGTH_SHORT).show();
-               }
+
+               Toast.makeText(this, registerHttpThread.isOk()?"注册成功":"注册失败", Toast.LENGTH_SHORT).show();
 
            }
 
         });
 
+/**
+ * 返回按钮,点击跳转回登录页面
+ */
         TextView back=(TextView)findViewById(R.id.back);
         back.setOnClickListener(v->{
             Intent intent=new Intent(Register.this,Login.class);
@@ -71,18 +70,12 @@ public class Register extends AppCompatActivity {
 
     }
 
-    public void insertUser(User u){
-//        SQLiteDatabase database=openOrCreateDatabase("yue.db",MODE_PRIVATE,null);
-        DBHelper dbHelper=new DBHelper(this,"yue.db",null,1);
-        dbHelper.getWritableDatabase()
-                .execSQL("insert into user(uname,pwd,sex) values('"+u.getUname()+"','"+u.getPwd()+"','"+u.getSex()+"')");
-    }
+/**
+ * 将所有判断条件一起判断
+ * @return
+ */
     public boolean checkAll(){
-        if(checkName()&&checkPwd()&&checkSex()&&checkCode()){
-            return true;
-        }else{
-            return false;
-        }
+        return checkName()&&checkPwd()&&checkSex()&&checkCode()?true:false;
     }
 
     public boolean checkName(){
@@ -102,7 +95,7 @@ public class Register extends AppCompatActivity {
                 return sex.getText().toString();
             }
         }
-        return null;
+        return "";
     }
     public boolean checkPwd(){
         pwdView=(EditText)findViewById(R.id.pwd);
@@ -127,7 +120,6 @@ public class Register extends AppCompatActivity {
             if(sex.isChecked()){
                 return true;
             }
-
         }
         Toast.makeText(Register.this,"请选择性别",Toast.LENGTH_SHORT).show();
         return false;

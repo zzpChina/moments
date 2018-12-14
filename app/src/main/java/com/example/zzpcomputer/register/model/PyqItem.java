@@ -1,7 +1,7 @@
 package com.example.zzpcomputer.register.model;
 
 /**
- * 朋友圈的布局类
+ * 朋友圈条目的布局类
  */
 public class PyqItem {
     private String headImg;
