@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * 发表线程请求
@@ -32,7 +33,8 @@ public class PublishHttpThread extends Thread{
     @Override
     public void run() {
         try {
-            URL url=new URL(MyProperties.URL +chourl+"?uname="+uname+"&content="+content);
+
+            URL url=new URL(MyProperties.URL +chourl+"?uname="+URLEncoder.encode(uname,"utf-8")+"&content="+URLEncoder.encode(content,"utf-8"));
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();

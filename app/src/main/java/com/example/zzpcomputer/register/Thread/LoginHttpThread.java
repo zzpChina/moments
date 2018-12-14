@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
  * 用于判断登录的线程
@@ -33,7 +34,7 @@ public class LoginHttpThread extends Thread{
     public void run() {
         try {
             //请求url
-            URL url=new URL(MyProperties.URL+"/login?uname="+uname+"&pwd="+pwd);
+            URL url=new URL(MyProperties.URL+"/login?uname="+URLEncoder.encode(uname,"utf-8")+"&pwd="+URLEncoder.encode(pwd,"utf-8"));
             //获取http连接
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));

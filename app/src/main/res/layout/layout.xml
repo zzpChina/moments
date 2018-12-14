@@ -32,12 +32,12 @@
         android:layout_toEndOf="@+id/headImg" />
     <ImageView
         android:layout_width="40dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp"
         android:layout_below="@+id/mood"
-        android:src="@drawable/pl"
-        android:id="@+id/pl" />
+        android:src="@drawable/zf"
+        android:id="@+id/zf" />
 
 </RelativeLayout>

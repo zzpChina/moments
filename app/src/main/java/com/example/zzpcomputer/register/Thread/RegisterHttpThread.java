@@ -49,7 +49,7 @@ public class RegisterHttpThread extends Thread{
                 BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
                 String temp;
                 StringBuffer stringBuffer=new StringBuffer();
-                while((temp=bufferedReader.readLine()) != null){
+                while((temp=bufferedReader.readLine()) !=null){
                     stringBuffer.append(temp);
                 }
                 isOk=stringBuffer.toString().equals("yes");

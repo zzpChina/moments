@@ -10,9 +10,10 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
 
 /**
- *选择朋友圈线程，传送上去
+ *选择朋友圈线程
  */
 @SuppressWarnings("all")
 public class ChooseGroupHttpThread extends Thread{
@@ -28,7 +29,7 @@ public class ChooseGroupHttpThread extends Thread{
     @Override
     public void run() {
         try {
-            URL url=new URL(MyProperties.URL+"getGroup?uname="+uname+"&groupNum="+groupNum );
+            URL url=new URL(MyProperties.URL+"getGroup?uname="+URLEncoder.encode(uname,"utf-8") +"&groupNum="+URLEncoder.encode(groupNum,"utf-8") );
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();

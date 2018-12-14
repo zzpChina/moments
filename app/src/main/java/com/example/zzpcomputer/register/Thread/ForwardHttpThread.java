@@ -1,5 +1,6 @@
 package com.example.zzpcomputer.register.Thread;
 
+import android.util.Log;
 
 import com.example.zzpcomputer.register.utils.HttpMethod;
 import com.example.zzpcomputer.register.utils.MyProperties;
@@ -12,49 +13,47 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.Arrays;
 
-/**
- * 获取朋友圈动态数据
- */
-@SuppressWarnings("all")
-public class GetMoodHttpThread extends Thread {
+public class ForwardHttpThread extends Thread {
     private String uname;
-    private String result;
-    public GetMoodHttpThread() {
-    }
+    private String content;
+    private boolean isOk;
 
-    public GetMoodHttpThread(String uname) {
+    private ForwardHttpThread(){}
+    public ForwardHttpThread(String uname, String content) {
         this.uname = uname;
+        this.content=content;
     }
 
     @Override
     public void run() {
         try {
-            URL url=new URL(MyProperties.URL+"mood?uname="+URLEncoder.encode(uname,"utf-8"));
+            URL url=new URL(MyProperties.URL +"getMood3?uname="+URLEncoder.encode(uname,"utf-8") +"&content="+URLEncoder.encode(content,"utf-8"));
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();
+
             if(httpURLConnection.getResponseCode()==200){
                 InputStream inputStream=httpURLConnection.getInputStream();
                 InputStreamReader inputStreamReader=new InputStreamReader(inputStream,"utf-8");
                 BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
                 String temp;
-                StringBuffer stringBuffer=new StringBuffer();
+                StringBuilder stringBuilder=new StringBuilder();
                 while((temp=bufferedReader.readLine())!=null){
-                    stringBuffer.append(temp);
+                    stringBuilder.append(temp);
                 }
-                result = Arrays.toString(stringBuffer.toString().trim().split("--"));
+                Log.i("yysyys",stringBuilder.toString().trim());
+                isOk=stringBuilder.toString().trim().equals("yes");
+
             }
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
-    public String getResult() {
-        return result;
+    public boolean isOk() {
+        return isOk;
     }
 }
