@@ -53,7 +53,12 @@ public class Register extends AppCompatActivity {
                    e.printStackTrace();
                }
 
-               Toast.makeText(this, registerHttpThread.isOk()?"注册成功":"注册失败", Toast.LENGTH_SHORT).show();
+               if(registerHttpThread.isOk()){
+                   Toast.makeText(this, "注册成功!", Toast.LENGTH_SHORT).show();
+                   Intent intent=new Intent(Register.this,Login.class);
+                   startActivity(intent);
+               }
+
 
            }
 
