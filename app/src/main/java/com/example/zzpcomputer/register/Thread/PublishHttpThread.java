@@ -1,5 +1,7 @@
 package com.example.zzpcomputer.register.Thread;
 
+import android.util.Log;
+
 import com.example.zzpcomputer.register.utils.HttpMethod;
 import com.example.zzpcomputer.register.utils.MyProperties;
 
@@ -31,6 +33,7 @@ public class PublishHttpThread extends Thread{
     @Override
     public void run() {
         try {
+            Log.i("哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇哇",chourl);
             URL url=new URL(MyProperties.URL +chourl+"?uname="+uname+"&content="+content);
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));

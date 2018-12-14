@@ -22,6 +22,7 @@ public class ChooseGroup extends AppCompatActivity {
             Intent intentLast=getIntent();
             Bundle bundle=intentLast.getExtras();
             Intent intentBack=new Intent(ChooseGroup.this,Index.class);
+            intentBack.putExtras(bundle);
             startActivity(intentBack);
         });
 

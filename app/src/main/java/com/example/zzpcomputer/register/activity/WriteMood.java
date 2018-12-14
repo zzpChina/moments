@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,14 +33,30 @@ public class WriteMood extends AppCompatActivity {
         });
         Button button=findViewById(R.id.publishMood);
         EditText editText=findViewById(R.id.moodText);
-        CheckBox checkBox=findViewById(R.id.privatePub);
+        RadioGroup radioGroup=findViewById(R.id.quanxian);
         //输入框不为空则能够发表
 
         button.setOnClickListener(v -> {
             if (!editText.getText().toString().trim().equals("")&&editText.getText().toString()!=null&&(editText.getText().toString().indexOf("--")==-1)) {
                 Intent intent = getIntent();
                 Bundle bundle = intent.getExtras();
-                String chourl=checkBox.isChecked()?"getMood":"getMood2";
+                String whocansee="";
+                for(int i=0;i<radioGroup.getChildCount();i++){
+                    RadioButton radioButton= (RadioButton) radioGroup.getChildAt(i);
+                    if(radioButton.isChecked()){
+                        whocansee=radioButton.getText().toString();
+                    }
+
+                }
+                String chourl="";
+                if(whocansee.equals("仅自己可见")){
+                    chourl="getMood";
+                }else if(whocansee.equals("群组可见")){
+                    chourl="getMood2";
+                }else if(whocansee.equals("所有人可见")){
+                    chourl="getMood3";
+                }
+
                 PublishHttpThread publishHttpThread = new PublishHttpThread(bundle.getString("uname"), editText.getText().toString(),chourl);
                 publishHttpThread.start();
                 try {

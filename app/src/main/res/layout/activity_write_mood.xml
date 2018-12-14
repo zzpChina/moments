@@ -43,7 +43,7 @@
     <EditText
         android:layout_width="370dp"
         android:layout_height="200dp"
-        android:inputType="text"
+        android:inputType="textMultiLine"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/line"
         android:layout_marginTop="5dp"
@@ -71,14 +71,45 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/moodText" />
-    <CheckBox
+    <!--<CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/privateDo"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/moodText"
         android:layout_marginTop="40dp"
-        android:id="@+id/privatePub" />
+        android:id="@+id/privatePub" />-->
+
+    <RadioGroup
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/moodText"
+        android:id="@+id/quanxian"
+        android:layout_centerHorizontal="true">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/self"
+            android:textSize="13sp"
+            android:id="@+id/self" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/members"
+            android:textSize="13sp"
+            android:id="@+id/member" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/all"
+            android:checked="true"
+            android:textSize="13sp"
+            android:id="@+id/all" />
+
+
+    </RadioGroup>
 
     <TextView
         android:layout_width="100dp"
