@@ -49,6 +49,11 @@
 
     <string name="privateDo">私密发布</string>
     <string name="tit">好友动态</string>
+    <string name="whoCanSee">谁可以看</string>
+    <string name="moodImg">选择你的心情吧...</string>
+    <string name="happy">开心</string>
+    <string name="upset">难过</string>
+    <string name="angry">愤怒</string>
 
 
     <string name="groupBack">＜  返回</string>

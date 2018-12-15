@@ -38,6 +38,7 @@ public class FormAdapter extends ArrayAdapter {
             layoutView.imageView=view.findViewById(R.id.headImg);
             layoutView.textView=view.findViewById(R.id.unamePyq);
             layoutView.textView2=view.findViewById(R.id.mood);
+            layoutView.imageView1=view.findViewById(R.id.moodImage);
             view.setTag(layoutView);
         }else{
             view=convertView;
@@ -50,7 +51,15 @@ public class FormAdapter extends ArrayAdapter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        HeadImgHttpThread moodImg=new HeadImgHttpThread(pyqItem.getMoodImg());
+        moodImg.start();
+        try {
+            moodImg.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         layoutView.imageView.setImageBitmap(headImgHttpThread.getResultBitmap());
+        layoutView.imageView1.setImageBitmap(moodImg.getResultBitmap());
         layoutView.textView.setText(pyqItem.getUname());
         layoutView.textView2.setText(pyqItem.getMood());
         return view;
@@ -60,5 +69,6 @@ public class FormAdapter extends ArrayAdapter {
        private ImageView imageView;
        private TextView textView;
        private TextView textView2;
+       private ImageView imageView1;
     }
 }

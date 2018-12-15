@@ -1,6 +1,8 @@
 package com.example.zzpcomputer.register.Thread;
 
 
+import android.util.Log;
+
 import com.example.zzpcomputer.register.utils.HttpMethod;
 import com.example.zzpcomputer.register.utils.MyProperties;
 
@@ -21,20 +23,23 @@ public class PublishHttpThread extends Thread{
     private String uname;
     private String content;
     private String chourl;
+    private String moodImgurl;
     private boolean isOk;
 
     private PublishHttpThread(){}
-    public PublishHttpThread(String uname,String content,String chourl) {
+    public PublishHttpThread(String uname,String content,String chourl,String moodImgurl) {
         this.uname = uname;
         this.content=content;
         this.chourl=chourl;
+        this.moodImgurl=moodImgurl;
+        Log.i("toooooooop",moodImgurl);
     }
 
     @Override
     public void run() {
         try {
 
-            URL url=new URL(MyProperties.URL +chourl+"?uname="+URLEncoder.encode(uname,"utf-8")+"&content="+URLEncoder.encode(content,"utf-8"));
+            URL url=new URL(MyProperties.URL +chourl+"?uname="+URLEncoder.encode(uname,"utf-8")+"&content="+URLEncoder.encode(content,"utf-8")+"&moodImgUrl="+moodImgurl);
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();

@@ -7,13 +7,15 @@ public class PyqItem {
     private String headImg;
     private String uname;
     private String mood;
+    private String moodImg;
 
     public PyqItem(){}
 
-    public PyqItem(String headImg, String uname, String mood) {
+    public PyqItem(String headImg, String uname, String mood, String moodImg) {
         this.headImg = headImg;
         this.uname = uname;
         this.mood = mood;
+        this.moodImg = moodImg;
     }
 
     public String getHeadImg() {
@@ -38,5 +40,13 @@ public class PyqItem {
 
     public void setMood(String mood) {
         this.mood = mood;
+    }
+
+    public String getMoodImg() {
+        return moodImg;
+    }
+
+    public void setMoodImg(String moodImg) {
+        this.moodImg = moodImg;
     }
 }

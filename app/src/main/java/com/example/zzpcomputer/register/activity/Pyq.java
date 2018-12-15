@@ -71,6 +71,7 @@ public class Pyq extends AppCompatActivity {
                     String srcName=srcNameView.getText().toString();
                     TextView srcMoodView=view.findViewById(R.id.mood);
                     String srcMood=srcMoodView.getText().toString();
+                    ImageView imageView1=view.findViewById(R.id.moodImage);
                     String forwardMoodFirst="(转发自'"+srcName+"')"+srcMood;
                     String forwardMood=srcMood.startsWith("(转发自")?srcMood:forwardMoodFirst;
 
