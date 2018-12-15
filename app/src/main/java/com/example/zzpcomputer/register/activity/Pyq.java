@@ -75,7 +75,8 @@ public class Pyq extends AppCompatActivity {
                     String forwardMoodFirst="(转发自'"+srcName+"')"+srcMood;
                     String forwardMood=srcMood.startsWith("(转发自")?srcMood:forwardMoodFirst;
 
-                    ForwardHttpThread forwardHttpThread=new ForwardHttpThread(bundle1.getString("uname"),forwardMood);
+                    String moodImgurl=(String)imageView1.getTag();
+                    ForwardHttpThread forwardHttpThread=new ForwardHttpThread(bundle1.getString("uname"),forwardMood,moodImgurl);
                     forwardHttpThread.start();
                     try {
                         forwardHttpThread.join();

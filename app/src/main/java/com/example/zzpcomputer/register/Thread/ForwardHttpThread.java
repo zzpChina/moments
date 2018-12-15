@@ -17,18 +17,20 @@ import java.net.URLEncoder;
 public class ForwardHttpThread extends Thread {
     private String uname;
     private String content;
+    private String moodImgurl;
     private boolean isOk;
 
     private ForwardHttpThread(){}
-    public ForwardHttpThread(String uname, String content) {
+    public ForwardHttpThread(String uname, String content,String moodImgurl) {
         this.uname = uname;
         this.content=content;
+        this.moodImgurl=moodImgurl;
     }
 
     @Override
     public void run() {
         try {
-            URL url=new URL(MyProperties.URL +"getMood3?uname="+URLEncoder.encode(uname,"utf-8") +"&content="+URLEncoder.encode(content,"utf-8"));
+            URL url=new URL(MyProperties.URL +"getMood3?uname="+URLEncoder.encode(uname,"utf-8") +"&content="+URLEncoder.encode(content,"utf-8")+"&moodImgUrl="+moodImgurl);
             HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();
