@@ -59,6 +59,14 @@ public class Login extends AppCompatActivity {
             }
             
         });
+        /**
+         * 修改密码
+         */
+        TextView textView=findViewById(R.id.updatePass);
+        textView.setOnClickListener(v->{
+            Intent intent=new Intent(Login.this,UpdatePwdActivity.class);
+            startActivity(intent);
+        });
     }
 
 /**

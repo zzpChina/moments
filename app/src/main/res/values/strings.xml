@@ -17,12 +17,23 @@
     <string name="regHref">注册</string>
     <string name="forget">忘记密码?</string>
     <string name="logBtn">登录</string>
+    <string name="updatePwd">修改密码</string>
 
     <string name="logoImg">这是logo</string>
     <string name="pyqImg">这是朋友圈</string>
     <string name="jsbImg">这是记事本</string>
     <string name="des">这是图片</string>
     <string name="backLogin">＜ 退出</string>
+
+
+
+    <string name="forgetTitle">修改密码</string>\
+    <string name="oldPwd">请输入原密码</string>
+    <string name="newPwd">请输入新密码</string>
+    <string name="newPwdAgain">再次输入新密码</string>
+    <string name="yourName">请输入用户名</string>
+    <string name="sureBtn">确认修改</string>
+
 
 
     <string name="backIndex">＜  返回</string>
