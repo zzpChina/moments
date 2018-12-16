@@ -12,14 +12,16 @@
         android:id="@+id/backToLogin"
         android:text="@string/backIndex"
         android:gravity="center_vertical"
-        android:textSize="15sp"/>
+        android:textSize="22sp"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="50dp"
+        android:layout_below="@+id/backToLogin"
         android:text="@string/forgetTitle"
-        android:textColor="#060821"
+        android:textColor="#454d53"
         android:id="@+id/updatePass"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:gravity="center" />
 
     <EditText
@@ -27,6 +29,7 @@
         android:layout_height="50dp"
         android:inputType="textPassword"
         android:id="@+id/yourNname"
+        android:textSize="22dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/updatePass"
         android:autofillHints="@string/tip2"
@@ -38,6 +41,7 @@
         android:layout_height="50dp"
         android:inputType="textPassword"
         android:id="@+id/OldPwd"
+        android:textSize="22dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/yourNname"
         android:autofillHints="@string/tip2"
@@ -50,6 +54,7 @@
         android:inputType="textPassword"
         android:id="@+id/newPwd"
         android:layout_centerHorizontal="true"
+        android:textSize="22dp"
         android:layout_below="@+id/OldPwd"
         android:autofillHints="@string/tip2"
         android:hint="@string/newPwd"
@@ -61,6 +66,7 @@
         android:id="@+id/newPwdSure"
         android:autofillHints=""
         android:layout_centerHorizontal="true"
+        android:textSize="22dp"
         android:layout_below="@+id/newPwd"
         android:hint="@string/newPwdAgain"
         android:gravity="center" />
@@ -72,6 +78,8 @@
         android:layout_centerHorizontal="true"
         android:text="@string/sureBtn"
         android:id="@+id/updateOk"
+        android:textSize="28sp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/reg"  />
 
 </RelativeLayout>

@@ -6,46 +6,47 @@
     android:background="#FFFFFF"
     android:layout_height="match_parent"
     tools:context=".activity.WriteMood">
-
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:id="@+id/back4"
-        android:gravity="center_vertical"
-        android:text="@string/backPyq"
-        android:textSize="20sp"/>
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:text="@string/moodTitle" />
-    <Button
-        android:layout_width="70dp"
-        android:layout_height="30dp"
-        android:gravity="center"
-        android:textSize="20sp"
-        android:id="@+id/publishMood"
-        android:background="#7fdcfa"
-        android:layout_margin="10dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="@string/report"/>
-    <View
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/back4"
-        android:id="@+id/line"
-        android:background="#464343" />
+        android:layout_height="50dp"
+        android:id="@+id/title2"
+        android:background="#b1e8f7">
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/back4"
+            android:gravity="center_vertical"
+            android:text="@string/backPyq"
+            android:textSize="22sp"/>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:text="@string/moodTitle" />
+
+        <Button
+            android:layout_width="70dp"
+            android:layout_height="30dp"
+            android:gravity="center"
+            android:textSize="22sp"
+            android:id="@+id/publishMood"
+            android:background="#7fdcfa"
+            android:layout_margin="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="@string/report"/>
+    </RelativeLayout>
 
     <EditText
-        android:layout_width="370dp"
-        android:layout_height="200dp"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
         android:inputType="textMultiLine"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/line"
+        android:layout_below="@+id/title2"
         android:layout_marginTop="5dp"
         android:gravity="start"
         android:autofillHints=""

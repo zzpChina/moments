@@ -58,6 +58,7 @@ public class FormAdapter extends ArrayAdapter {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
         layoutView.imageView.setImageBitmap(headImgHttpThread.getResultBitmap());
         layoutView.imageView1.setTag(pyqItem.getMoodImg());
         layoutView.imageView1.setImageBitmap(moodImg.getResultBitmap());

@@ -16,19 +16,27 @@
         android:textSize="20sp" />
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="200dp"
         android:id="@+id/logo"
-        android:background="@drawable/yd"
         android:contentDescription="@string/logoImg"
         android:src="@drawable/logop" />
     <ImageView
-        android:layout_width="120dp"
+        android:layout_width="300dp"
         android:layout_height="120dp"
         android:layout_below="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/yourHead"
+        android:background="@drawable/yd"
+        android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
         android:contentDescription="@string/pyqImg"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_above="@+id/mainApp"
+        android:layout_marginBottom="100dp"
         android:id="@+id/pyq"
         android:src="@drawable/pyq" />
     <TextView
@@ -39,58 +47,64 @@
     <ImageView
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:layout_below="@+id/logo"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:src="@drawable/ql"
         android:contentDescription="@string/jsbImg"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginBottom="100dp"
+        android:layout_above="@id/mainApp"
         android:id="@+id/ql" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="2dp"
-        android:background="#6ed5ec"
-        android:orientation="horizontal">
+        android:id="@+id/mainApp"
+        android:background="#6ed5ec">
 
         <ImageView
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:contentDescription="@string/des"
-            android:layout_gravity="center"
             android:layout_marginStart="30dp"
             android:layout_marginLeft="30dp"
+            android:id="@+id/one"
             android:src="@drawable/love" />
         <ImageView
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:contentDescription="@string/des"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/one"
+            android:layout_toEndOf="@+id/one"
+            android:layout_marginStart="40dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/two"
             android:src="@drawable/yun" />
         <ImageView
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center"
             android:contentDescription="@string/des"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_toStartOf="@+id/four"
+            android:layout_toLeftOf="@+id/four"
             android:src="@drawable/js" />
         <ImageView
             android:layout_width="65dp"
             android:layout_height="65dp"
             android:layout_gravity="center"
             android:contentDescription="@string/des"
-            android:layout_marginStart="15dp"
-            android:layout_marginLeft="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginEnd="30dp"
+            android:id="@+id/four"
             android:src="@drawable/kf" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>
