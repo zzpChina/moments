@@ -88,8 +88,8 @@ public class RegisterActivity extends AppCompatActivity {
     public boolean checkName() {
         unameView = (EditText) findViewById(R.id.uname);
         String uname = unameView.getText().toString();
-        if (uname.equals("")) {
-            Toast.makeText(RegisterActivity.this, "用户名不能为空!", Toast.LENGTH_SHORT).show();
+        if (uname.equals("")||uname.indexOf("--")!=-1||uname.indexOf("\\")!=-1) {
+            Toast.makeText(RegisterActivity.this, "用户名不能为空或非法!", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;
@@ -110,8 +110,8 @@ public class RegisterActivity extends AppCompatActivity {
         String pwd = pwdView.getText().toString();
         EditText pwdSureView = (EditText) findViewById(R.id.pwdsure);
         String pwdsure = pwdSureView.getText().toString();
-        if (pwd.equals("")) {
-            Toast.makeText(RegisterActivity.this, "密码不能为空!", Toast.LENGTH_SHORT).show();
+        if (pwd.equals("")||pwd.indexOf("--")!=-1||pwd.indexOf("\\")!=-1) {
+            Toast.makeText(RegisterActivity.this, "密码不能为空或非法!", Toast.LENGTH_SHORT).show();
             return false;
         }
         if (!pwd.equals(pwdsure)) {
