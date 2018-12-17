@@ -9,7 +9,8 @@ public class PyqItem {
     private String mood;
     private String moodImg;
 
-    public PyqItem(){}
+    public PyqItem() {
+    }
 
     public PyqItem(String headImg, String uname, String mood, String moodImg) {
         this.headImg = headImg;

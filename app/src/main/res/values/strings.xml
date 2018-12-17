@@ -26,14 +26,12 @@
     <string name="backLogin">＜ 退出</string>
 
 
-
     <string name="forgetTitle">修改密码</string>\
     <string name="oldPwd">请输入原密码</string>
     <string name="newPwd">请输入新密码</string>
     <string name="newPwdAgain">再次输入新密码</string>
     <string name="yourName">请输入用户名</string>
     <string name="sureBtn">确认修改</string>
-
 
 
     <string name="backIndex">＜  返回</string>
@@ -55,6 +53,7 @@
     <string name="upset">难过</string>
     <string name="angry">愤怒</string>
 
+    <string name="welcome">欢迎使用</string>
 
     <string name="groupBack">＜  返回</string>
     <string name="InputGroup">输入群号</string>

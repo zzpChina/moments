@@ -4,45 +4,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tk"
-    tools:context=".activity.ChooseGroup">
-    <TextView
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:gravity="center_vertical"
-        android:text="@string/groupBack"
-        android:id="@+id/groupBack"
-        android:textSize="20sp"/>
+    tools:context=".activity.ChooseGroupActivity">
+    <LinearLayout
+        android:id="@+id/itemBar2"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#b7d5de">
+
+        <TextView
+            android:id="@+id/groupBack"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:text="@string/groupBack"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="370dp"
-        android:orientation="vertical"
         android:layout_centerVertical="true"
-        android:background="@drawable/ql">
-
+        android:background="@drawable/ql"
+        android:orientation="vertical">
 
 
         <TextView
+            android:id="@+id/logo3"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:textSize="40sp"
-            android:id="@+id/logo3"
+            android:gravity="center_horizontal"
             android:text="@string/InputGroup"
-            android:gravity="center_horizontal"/>
+            android:textSize="40sp" />
 
         <EditText
+            android:id="@+id/groupNum"
             android:layout_width="200dp"
             android:layout_height="40dp"
-            android:background="#ffff"
             android:layout_gravity="center"
-            android:id="@+id/groupNum"
-            android:layout_marginTop="70dp" />
+            android:layout_marginTop="70dp"
+            android:background="#ffff" />
+
         <Button
+            android:id="@+id/regGroup"
             android:layout_width="100dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:background="#9befe2"
-            android:id="@+id/regGroup"
             android:layout_marginTop="20dp"
+            android:background="#9befe2"
             android:text="@string/regGroup" />
 
 

@@ -3,202 +3,207 @@
 
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFFFFF"
     android:layout_height="match_parent"
-    tools:context=".activity.WriteMood">
+    android:background="#FFFFFF"
+    tools:context=".activity.WriteMoodActivity">
+
     <RelativeLayout
+        android:id="@+id/title2"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:id="@+id/title2"
         android:background="#b1e8f7">
+
         <TextView
+            android:id="@+id/back4"
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:id="@+id/back4"
             android:gravity="center_vertical"
             android:text="@string/backPyq"
-            android:textSize="22sp"/>
+            android:textSize="22sp" />
 
         <TextView
             android:layout_width="100dp"
             android:layout_height="50dp"
-            android:textSize="25sp"
-            android:gravity="center"
-            android:textStyle="bold"
             android:layout_centerHorizontal="true"
-            android:text="@string/moodTitle" />
+            android:gravity="center"
+            android:text="@string/moodTitle"
+            android:textSize="25sp"
+            android:textStyle="bold" />
 
         <Button
+            android:id="@+id/publishMood"
             android:layout_width="70dp"
             android:layout_height="30dp"
-            android:gravity="center"
-            android:textSize="22sp"
-            android:id="@+id/publishMood"
-            android:background="#7fdcfa"
-            android:layout_margin="10dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="@string/report"/>
+            android:layout_margin="10dp"
+            android:background="#7fdcfa"
+            android:gravity="center"
+            android:text="@string/report"
+            android:textSize="22sp" />
     </RelativeLayout>
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:inputType="textMultiLine"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/title2"
-        android:layout_marginTop="5dp"
-        android:gravity="start"
-        android:autofillHints=""
         android:id="@+id/moodText"
-        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/title2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:autofillHints=""
         android:background="@drawable/moodtext"
+        android:gravity="start"
+        android:hint="@string/youMood"
+        android:inputType="textMultiLine"
         android:lineSpacingExtra="10dp"
         android:maxLength="140"
-        android:hint="@string/youMood" />
+        android:scrollbars="vertical" />
 
     <ImageView
+        android:id="@+id/gps"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/dw"
-        android:layout_marginStart="20dp"
-        android:contentDescription="@string/des"
-        android:layout_marginLeft="20dp"
-        android:id="@+id/gps"
-        android:layout_marginTop="10dp"
+        android:layout_below="@+id/moodText"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/moodText" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/des"
+        android:src="@drawable/dw" />
 
     <TextView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:text="@string/whoCanSee"
-        android:textSize="15sp"
+        android:layout_below="@+id/moodText"
         android:layout_toLeftOf="@+id/quanxian"
         android:gravity="center"
-        android:layout_below="@+id/moodText"/>
+        android:text="@string/whoCanSee"
+        android:textSize="15sp" />
 
     <RadioGroup
+        android:id="@+id/quanxian"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/moodText"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginRight="20dp"
-        android:id="@+id/quanxian">
+        android:layout_marginRight="20dp">
+
         <RadioButton
+            android:id="@+id/self"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/self"
-            android:textSize="13sp"
-            android:id="@+id/self" />
+            android:textSize="13sp" />
 
         <RadioButton
+            android:id="@+id/member"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/members"
-            android:textSize="13sp"
-            android:id="@+id/member" />
+            android:textSize="13sp" />
 
         <RadioButton
+            android:id="@+id/all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/all"
             android:checked="true"
-            android:textSize="13sp"
-            android:id="@+id/all" />
+            android:text="@string/all"
+            android:textSize="13sp" />
 
 
     </RadioGroup>
 
     <TextView
+        android:id="@+id/gpsText"
         android:layout_width="100dp"
         android:layout_height="50dp"
+        android:layout_below="@+id/gps"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/gps"
-        android:id="@+id/gpsText"
         android:gravity="center"
-        android:text="@string/add"/>
+        android:text="@string/add" />
 
     <TextView
+        android:id="@+id/chooseYourMood"
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:gravity="center"
-        android:id="@+id/chooseYourMood"
         android:layout_below="@+id/gpsText"
+        android:gravity="center"
         android:text="@string/moodImg" />
 
 
+    <RadioGroup
+        android:id="@+id/moodImg"
+        android:layout_width="330dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/chooseYourMood"
+        android:layout_centerHorizontal="true"
+        android:gravity="bottom"
+        android:orientation="horizontal">
 
-        <RadioGroup
-            android:layout_width="330dp"
-            android:layout_height="40dp"
-            android:orientation="horizontal"
-            android:layout_below="@id/chooseYourMood"
-            android:gravity="bottom"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/moodImg">
-            <RadioButton
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="@string/happy"
-                android:checked="true"
+        <RadioButton
+            android:id="@+id/happy"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:checked="true"
 
-                android:textSize="13sp"
-                android:id="@+id/happy" />
+            android:text="@string/happy"
+            android:textSize="13sp" />
 
-            <RadioButton
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="@string/upset"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:textSize="13sp"
-                android:id="@+id/upset" />
+        <RadioButton
+            android:id="@+id/upset"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/upset"
+            android:textSize="13sp" />
 
-            <RadioButton
-                android:layout_width="110dp"
-                android:layout_height="wrap_content"
-                android:text="@string/angry"
-                android:textSize="13sp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:id="@+id/angry" />
+        <RadioButton
+            android:id="@+id/angry"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@string/angry"
+            android:textSize="13sp" />
 
-        </RadioGroup>
+    </RadioGroup>
 
-        <LinearLayout
-            android:layout_width="360dp"
+    <LinearLayout
+        android:id="@+id/moodImg2"
+        android:layout_width="360dp"
+        android:layout_height="110dp"
+        android:layout_below="@+id/moodImg"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="110dp"
             android:layout_height="110dp"
-            android:orientation="horizontal"
-            android:id="@+id/moodImg2"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/moodImg">
+            android:contentDescription="@string/des"
+            android:src="@drawable/happy" />
 
-            <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:contentDescription="@string/des"
-                android:src="@drawable/happy"/>
-            <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:contentDescription="@string/des"
-                android:layout_marginLeft="10dp"
-                android:layout_marginStart="10dp"
-                android:src="@drawable/upset" />
-            <ImageView
-                android:layout_width="110dp"
-                android:layout_height="110dp"
-                android:contentDescription="@string/des"
-                android:layout_marginLeft="10dp"
-                android:src="@drawable/angry" />
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/upset" />
 
-        </LinearLayout>
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_marginLeft="10dp"
+            android:contentDescription="@string/des"
+            android:src="@drawable/angry" />
 
-<!--        -->
+    </LinearLayout>
+
+    <!--        -->
 
 
 </RelativeLayout>

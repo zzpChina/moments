@@ -1,55 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <ImageView
+        android:id="@+id/headImg"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:contentDescription="@string/des"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:id="@+id/headImg" />
+        android:layout_marginLeft="10dp"
+        android:contentDescription="@string/des" />
+
     <TextView
+        android:id="@+id/unamePyq"
         android:layout_width="200dp"
         android:layout_height="30dp"
-        android:id="@+id/unamePyq"
-        android:textColor="#36daec"
-        android:textSize="18sp"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
         android:layout_toEndOf="@+id/headImg"
-        android:layout_toRightOf="@+id/headImg"/>
+        android:layout_toRightOf="@+id/headImg"
+        android:textColor="#36daec"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/mood"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/unamePyq"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/unamePyq"
         android:layout_toEndOf="@+id/headImg"
         android:layout_toRightOf="@+id/headImg"
         android:textSize="20sp" />
+
     <ImageView
+        android:id="@+id/moodImage"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_below="@+id/mood"
-        android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
-        android:id="@+id/moodImage"
+        android:layout_marginLeft="10dp"
         android:layout_toEndOf="@+id/headImg"
         android:layout_toRightOf="@+id/headImg" />
+
     <ImageView
+        android:id="@+id/zf"
         android:layout_width="40dp"
         android:layout_height="40dp"
+        android:layout_below="@+id/mood"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_marginRight="15dp"
-        android:src="@drawable/zf"
-        android:layout_below="@+id/mood"
-        android:id="@+id/zf" />
+        android:src="@drawable/zf" />
 
 </RelativeLayout>

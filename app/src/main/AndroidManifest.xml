@@ -12,19 +12,20 @@
         android:roundIcon="@drawable/zzp"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Login">
+        <activity android:name=".activity.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Register" />
-        <activity android:name=".activity.Index" />
-        <activity android:name=".activity.Pyq" />
-        <activity android:name=".activity.WriteMood" />
-        <activity android:name=".activity.ChooseGroup" />
-        <activity android:name=".activity.UpdatePwdActivity"></activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.IndexActivity" />
+        <activity android:name=".activity.PyqActivity" />
+        <activity android:name=".activity.WriteMoodActivity" />
+        <activity android:name=".activity.ChooseGroupActivity" />
+        <activity android:name=".activity.UpdatePwdActivity" />
+        <activity android:name=".activity.LoginActivity"></activity>
     </application>
 
 </manifest>

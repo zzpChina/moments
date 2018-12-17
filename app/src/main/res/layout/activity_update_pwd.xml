@@ -6,80 +6,90 @@
     android:background="@drawable/tk"
     tools:context=".activity.UpdatePwdActivity">
 
-    <TextView
-        android:layout_width="100dp"
+    <LinearLayout
+        android:id="@+id/itemBar"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/backToLogin"
-        android:text="@string/backIndex"
-        android:gravity="center_vertical"
-        android:textSize="22sp"/>
+        android:background="#b7d5de">
+
+        <TextView
+            android:id="@+id/backToLogin"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:text="@string/backIndex"
+            android:textSize="22sp" />
+    </LinearLayout>
+
+
     <TextView
+        android:id="@+id/updatePass"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:layout_marginTop="50dp"
         android:layout_below="@+id/backToLogin"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
         android:text="@string/forgetTitle"
         android:textColor="#454d53"
-        android:id="@+id/updatePass"
-        android:textSize="35sp"
-        android:gravity="center" />
+        android:textSize="35sp" />
 
     <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:inputType="textPassword"
         android:id="@+id/yourNname"
-        android:textSize="22dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/updatePass"
+        android:layout_centerHorizontal="true"
         android:autofillHints="@string/tip2"
+        android:gravity="center"
         android:hint="@string/yourName"
-        android:gravity="center" />
+        android:inputType="textPassword"
+        android:textSize="22dp" />
 
     <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:inputType="textPassword"
         android:id="@+id/OldPwd"
-        android:textSize="22dp"
-        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/yourNname"
+        android:layout_centerHorizontal="true"
         android:autofillHints="@string/tip2"
+        android:gravity="center"
         android:hint="@string/oldPwd"
-        android:gravity="center" />
+        android:inputType="textPassword"
+        android:textSize="22dp" />
 
     <EditText
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:inputType="textPassword"
         android:id="@+id/newPwd"
-        android:layout_centerHorizontal="true"
-        android:textSize="22dp"
-        android:layout_below="@+id/OldPwd"
-        android:autofillHints="@string/tip2"
-        android:hint="@string/newPwd"
-        android:gravity="center" />
-    <EditText
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:inputType="textPassword"
-        android:id="@+id/newPwdSure"
-        android:autofillHints=""
+        android:layout_below="@+id/OldPwd"
         android:layout_centerHorizontal="true"
-        android:textSize="22dp"
+        android:autofillHints="@string/tip2"
+        android:gravity="center"
+        android:hint="@string/newPwd"
+        android:inputType="textPassword"
+        android:textSize="22dp" />
+
+    <EditText
+        android:id="@+id/newPwdSure"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/newPwd"
+        android:layout_centerHorizontal="true"
+        android:autofillHints=""
+        android:gravity="center"
         android:hint="@string/newPwdAgain"
-        android:gravity="center" />
+        android:inputType="textPassword"
+        android:textSize="22dp" />
 
     <Button
+        android:id="@+id/updateOk"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_below="@+id/newPwdSure"
         android:layout_centerHorizontal="true"
-        android:text="@string/sureBtn"
-        android:id="@+id/updateOk"
-        android:textSize="28sp"
         android:layout_marginTop="30dp"
-        android:background="@drawable/reg"  />
+        android:background="@drawable/reg"
+        android:text="@string/sureBtn"
+        android:textSize="28sp" />
 
 </RelativeLayout>

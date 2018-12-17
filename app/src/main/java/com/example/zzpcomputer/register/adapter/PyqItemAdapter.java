@@ -20,38 +20,41 @@ import java.util.List;
  * 适配器
  */
 @SuppressWarnings("all")
-public class FormAdapter extends ArrayAdapter {
+public class PyqItemAdapter extends ArrayAdapter {
     private int resourceId;
-    public FormAdapter(@NonNull Context context, int resource, @NonNull List objects) {
+
+    public PyqItemAdapter(@NonNull Context context, int resource, @NonNull List objects) {
         super(context, resource, objects);
-        this.resourceId=resource;
+        this.resourceId = resource;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View view=null;
-        PyqItem pyqItem= (PyqItem) getItem(position);
-        LayoutView layoutView=new LayoutView();
-        if(convertView==null){
-            view=LayoutInflater.from(getContext()).inflate(resourceId,parent,false);
-            layoutView.imageView=view.findViewById(R.id.headImg);
-            layoutView.textView=view.findViewById(R.id.unamePyq);
-            layoutView.textView2=view.findViewById(R.id.mood);
-            layoutView.imageView1=view.findViewById(R.id.moodImage);
+        View view = null;
+        PyqItem pyqItem = (PyqItem) getItem(position);
+        LayoutView layoutView = new LayoutView();
+        if (convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
+            layoutView.imageView = view.findViewById(R.id.headImg);
+            layoutView.textView = view.findViewById(R.id.unamePyq);
+            layoutView.textView2 = view.findViewById(R.id.mood);
+            layoutView.imageView1 = view.findViewById(R.id.moodImage);
             view.setTag(layoutView);
-        }else{
-            view=convertView;
-            layoutView= (LayoutView) view.getTag();
+        } else {
+            view = convertView;
+            layoutView = (LayoutView) view.getTag();
         }
-        HeadImgHttpThread headImgHttpThread=new HeadImgHttpThread(pyqItem.getHeadImg());
+        //获取头像
+        HeadImgHttpThread headImgHttpThread = new HeadImgHttpThread(pyqItem.getHeadImg());
         headImgHttpThread.start();
         try {
             headImgHttpThread.join();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        HeadImgHttpThread moodImg=new HeadImgHttpThread(pyqItem.getMoodImg());
+        //获取动态选择的图片
+        HeadImgHttpThread moodImg = new HeadImgHttpThread(pyqItem.getMoodImg());
         moodImg.start();
         try {
             moodImg.join();
@@ -67,10 +70,13 @@ public class FormAdapter extends ArrayAdapter {
         return view;
     }
 
+    /**
+     * 布局类
+     */
     private class LayoutView {
-       private ImageView imageView;
-       private TextView textView;
-       private TextView textView2;
-       private ImageView imageView1;
+        private ImageView imageView;
+        private TextView textView;
+        private TextView textView2;
+        private ImageView imageView1;
     }
 }

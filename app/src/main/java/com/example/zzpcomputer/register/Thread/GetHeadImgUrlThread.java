@@ -1,6 +1,6 @@
 package com.example.zzpcomputer.register.Thread;
 
-import com.example.zzpcomputer.register.utils.MyProperties;
+import com.example.zzpcomputer.register.utils.MyHost;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,18 +13,18 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-public class GetHeadImgUrl extends Thread {
+public class GetHeadImgUrlThread extends Thread {
     private String uname;
     private String resultUrl;
 
-    public GetHeadImgUrl(String uname) {
+    public GetHeadImgUrlThread(String uname) {
         this.uname = uname;
     }
 
     @Override
     public void run() {
         try {
-            URL url = new URL(MyProperties.URL + "headUrl?uname=" + URLEncoder.encode(uname, "utf-8"));
+            URL url = new URL(MyHost.URL + "headUrl?uname=" + URLEncoder.encode(uname, "utf-8"));
             //获取http连接
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.connect();//连接

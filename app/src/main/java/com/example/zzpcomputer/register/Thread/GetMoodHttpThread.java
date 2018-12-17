@@ -2,7 +2,7 @@ package com.example.zzpcomputer.register.Thread;
 
 
 import com.example.zzpcomputer.register.utils.HttpMethod;
-import com.example.zzpcomputer.register.utils.MyProperties;
+import com.example.zzpcomputer.register.utils.MyHost;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,6 +21,7 @@ import java.util.Arrays;
 public class GetMoodHttpThread extends Thread {
     private String uname;
     private String result;
+
     public GetMoodHttpThread() {
     }
 
@@ -31,17 +32,17 @@ public class GetMoodHttpThread extends Thread {
     @Override
     public void run() {
         try {
-            URL url=new URL(MyProperties.URL+"mood?uname="+URLEncoder.encode(uname,"utf-8"));
-            HttpURLConnection httpURLConnection= (HttpURLConnection) url.openConnection();
+            URL url = new URL(MyHost.URL + "mood?uname=" + URLEncoder.encode(uname, "utf-8"));
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             httpURLConnection.setRequestMethod(String.valueOf(HttpMethod.GET));
             httpURLConnection.connect();
-            if(httpURLConnection.getResponseCode()==200){
-                InputStream inputStream=httpURLConnection.getInputStream();
-                InputStreamReader inputStreamReader=new InputStreamReader(inputStream,"utf-8");
-                BufferedReader bufferedReader=new BufferedReader(inputStreamReader);
+            if (httpURLConnection.getResponseCode() == 200) {
+                InputStream inputStream = httpURLConnection.getInputStream();
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "utf-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String temp;
-                StringBuffer stringBuffer=new StringBuffer();
-                while((temp=bufferedReader.readLine())!=null){
+                StringBuffer stringBuffer = new StringBuffer();
+                while ((temp = bufferedReader.readLine()) != null) {
                     stringBuffer.append(temp);
                 }
                 result = Arrays.toString(stringBuffer.toString().trim().split("--"));
